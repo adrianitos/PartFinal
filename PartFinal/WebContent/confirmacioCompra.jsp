@@ -9,14 +9,15 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
 
-	<jsp:useBean id="map" class="java.util.HashMap" />
-	<c:set target="${map}" property="key1" value="value1" />
-	<c:set target="${map}" property="key2" value="value2" />
-	<c:set target="${map}" property="key3" value="value3" />
-	<c:set target="${map}" property="key4" value="value4" />
-	<c:forEach items="${map}" var="item">
-		<c:out value="${item.key}" /> = <c:out value="${item.value}" />
+
+
+%>
+
+	<jsp:useBean id="Sessio" scope="session" class="Sessio" />
+	<c:forEach items="${Sessio}" var="item">
+		<c:out value="${item.carrito.key.nom}" /> = <c:out value="${item.carrito.value}" />
 		<br />
 	</c:forEach>
 </body>
